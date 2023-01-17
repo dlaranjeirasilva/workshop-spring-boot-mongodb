@@ -2,6 +2,7 @@ package com.omnidlaranjeira.workshopmongo.config;
 
 import com.omnidlaranjeira.workshopmongo.domain.User;
 import com.omnidlaranjeira.workshopmongo.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
@@ -9,9 +10,10 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Arrays;
 
 @Configuration
+@RequiredArgsConstructor
 public class Instantiation implements CommandLineRunner {
-    @Autowired
-    private UserRepository userRepository;
+
+    private final UserRepository userRepository;
 
     @Override
     public void run(String... args) throws Exception {
